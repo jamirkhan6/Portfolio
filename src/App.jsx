@@ -1,4 +1,6 @@
 import About from "./components/about";
+import Expertise from "./components/expertise";
+import Home from "./components/home";
 import Navigation from "./components/navigation";
 
 
@@ -22,7 +24,9 @@ function App() {
       <main className="relative z-10 text-white">
 
         <Navigation />
+        <Home />
         <About />
+        <Expertise />
 
       </main>
     </div>

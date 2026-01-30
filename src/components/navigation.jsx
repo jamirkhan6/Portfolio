@@ -12,10 +12,10 @@ const Navigation = () => {
             Home
           </a>
           <a href="#" className="hover:text-teal-300 transition">
-            About Me
+            Projects
           </a>
           <a href="#" className="hover:text-teal-300 transition">
-            Projects
+            About Me
           </a>
           <a href="#" className="hover:text-teal-300 transition">
             Contact
