@@ -7,7 +7,7 @@ import { faMusic, faLightbulb, } from "@fortawesome/free-solid-svg-icons";
 
 const Expertise = () => {
   return (
-    <section className="mt-48 pb-48">
+    <section className="mt-48">
       <div className="mx-auto w-5/6">
         <p className="text-6xl text-[#F6C100] font-bold text-center">
           My Expartise By The Number

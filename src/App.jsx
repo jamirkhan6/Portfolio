@@ -2,6 +2,7 @@ import About from "./components/about";
 import Expertise from "./components/expertise";
 import Home from "./components/home";
 import Navigation from "./components/navigation";
+import Projects from "./components/projects";
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
         <Home />
         <About />
         <Expertise />
+        <Projects />
 
       </main>
     </div>
