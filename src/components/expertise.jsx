@@ -15,16 +15,16 @@ const Expertise = () => {
         <div className="w-96 h-1 mx-auto mt-8 bg-gradient-to-r from-transparent via-yellow-300 to-transparent"></div>
 
         <div className="grid grid-cols-4 gap-8 mt-24">
-          <div className="col-span-1 flex flex-col items-center justify-center gap-2 w-full bg-[#314445]/50 backdrop-blur-sm border border-[#F6C100] rounded-2xl">
+          <div className="col-span-1 flex flex-col items-center justify-center gap-2 w-full bg-[#314445]/50 backdrop-blur-sm border border-white/20 rounded-2xl">
             <FontAwesomeIcon icon={faMusic} className="text-3xl" />
             <p className="text-xl">Singing</p>
           </div>
-          <div className="col-span-1 flex flex-col items-center justify-center gap-2 w-full bg-[#314445]/50 backdrop-blur-sm border border-[#F6C100] rounded-2xl">
+          <div className="col-span-1 flex flex-col items-center justify-center gap-2 w-full bg-[#314445]/50 backdrop-blur-sm border border-white/20 rounded-2xl">
             <FontAwesomeIcon icon={faMusic} className="text-3xl" />
             <p className="text-xl">Singing</p>
           </div>
 
-          <div className="col-span-2 row-span-2 w-full bg-[#314445]/50 backdrop-blur-sm border border-[#F6C100] rounded-2xl p-6">
+          <div className="col-span-2 row-span-2 w-full bg-[#314445]/50 backdrop-blur-sm border border-white/20 rounded-2xl p-6">
             <div className="w-10/12 mx-auto mt-6">
               <div className="text-3xl text-[#F6C100] font-bold flex gap-2 items-center mb-6">
                 <FontAwesomeIcon icon={faLightbulb} />
@@ -37,27 +37,27 @@ const Expertise = () => {
             </div>
           </div>
 
-          <div className="col-span-1 flex flex-col items-center justify-center gap-2 w-full bg-[#314445]/50 backdrop-blur-sm border border-[#F6C100] rounded-2xl">
+          <div className="col-span-1 flex flex-col items-center justify-center gap-2 w-full bg-[#314445]/50 backdrop-blur-sm border border-white/20 rounded-2xl">
             <FontAwesomeIcon icon={faMusic} className="text-3xl" />
             <p className="text-xl">Singing</p>
           </div>
-          <div className="col-span-1 flex flex-col items-center justify-center gap-2 w-full bg-[#314445]/50 backdrop-blur-sm border border-[#F6C100] rounded-2xl">
+          <div className="col-span-1 flex flex-col items-center justify-center gap-2 w-full bg-[#314445]/50 backdrop-blur-sm border border-white/20 rounded-2xl">
             <FontAwesomeIcon icon={faMusic} className="text-3xl" />
             <p className="text-xl">Singing</p>
           </div>
-          <div className="col-span-1 flex flex-col items-center justify-center gap-8 w-full bg-[#314445]/50 backdrop-blur-sm border border-[#F6C100] rounded-2xl p-6">
+          <div className="col-span-1 flex flex-col items-center justify-center gap-8 w-full bg-[#314445]/50 backdrop-blur-sm border border-white/20 rounded-2xl p-6">
             <p>100+</p>
             <p>commits</p>
           </div>
-          <div className="col-span-1 flex flex-col items-center justify-center gap-8 w-full bg-[#314445]/50 backdrop-blur-sm border border-[#F6C100] rounded-2xl p-6">
+          <div className="col-span-1 flex flex-col items-center justify-center gap-8 w-full bg-[#314445]/50 backdrop-blur-sm border border-white/20 rounded-2xl p-6">
             <p>100+</p>
             <p>commits</p>
           </div>
-          <div className="col-span-1 flex flex-col items-center justify-center gap-8 w-full bg-[#314445]/50 backdrop-blur-sm border border-[#F6C100] rounded-2xl p-6">
+          <div className="col-span-1 flex flex-col items-center justify-center gap-8 w-full bg-[#314445]/50 backdrop-blur-sm border border-white/20 rounded-2xl p-6">
             <p>100+</p>
             <p>commits</p>
           </div>
-          <div className="col-span-1 flex flex-col items-center justify-center gap-8 w-full bg-[#314445]/50 backdrop-blur-sm border border-[#F6C100] rounded-2xl p-6">
+          <div className="col-span-1 flex flex-col items-center justify-center gap-8 w-full bg-[#314445]/50 backdrop-blur-sm border border-white/20 rounded-2xl p-6">
             <p>100+</p>
             <p>commits</p>
           </div>

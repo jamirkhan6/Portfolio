@@ -30,7 +30,16 @@ import {
 
 const Home = () => {
   return (
-    <section className="mt-24">
+    <motion.section
+      className="mt-24"
+      initial={{ y: 80, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{
+        duration: 1,
+        ease: "easeOut",
+      }}
+    >
       <div className="w-5/6  bg-[#314445]/50 backdrop-blur-sm mx-auto px-10 py-16 flex justify-between border border-white/20 rounded-2xl">
         <div className="w-full">
           <p className="text-6xl text-white font-bold">
@@ -52,7 +61,6 @@ const Home = () => {
                 " Backend Explorer",
                 " Team Collaborator",
                 " Creative Thinker",
-                
               ]}
               typingSpeed={75}
               pauseDuration={1500}
@@ -61,7 +69,6 @@ const Home = () => {
               texts={[
                 "Welcome to React Bits! Good to see you!",
                 "Build some amazing experiences!",
-                
               ]}
               deletingSpeed={50}
               variableSpeedEnabled={false}
@@ -171,7 +178,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 

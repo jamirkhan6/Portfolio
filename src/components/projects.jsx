@@ -13,7 +13,7 @@ const Projects = () => {
         <div className="h-[60vh] sticky top-20 z-10 w-4/5 bg-[#314445]/50 backdrop-blur-sm mx-auto rounded-3xl flex items-center">
           <div className="flex w-full h-full p-10 gap-10">
             {/* Image */}
-            <div className="w-1/2 h-full rounded-2xl bg-black/30 flex items-center justify-center">
+            <div className="w-1/2 h-full rounded-l-3xl bg-black/30 flex items-center justify-center">
               <span className="opacity-50">Project Image</span>
             </div>
 
@@ -117,7 +117,7 @@ const Projects = () => {
         </div>
 
         {/* spacer */}
-        <div className="h-[20vh]" />
+        {/* <div className="h-[10vh]" /> */}
       </div>
     </section>
   );

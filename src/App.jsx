@@ -1,6 +1,8 @@
 import About from "./components/about";
 import Expertise from "./components/expertise";
+import Footer from "./components/footer";
 import Home from "./components/home";
+import MordernTect from "./components/mordernTect";
 import Navigation from "./components/navigation";
 import Projects from "./components/projects";
 
@@ -29,6 +31,8 @@ function App() {
         <About />
         <Expertise />
         <Projects />
+        <MordernTect />
+        <Footer />
 
       </main>
     </div>
