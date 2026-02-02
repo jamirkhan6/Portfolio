@@ -11,12 +11,14 @@ import {
 
 const Footer = () => {
   return (
-    <section className="mt-48 mb-20">
+    <section className="mt-28 sm:mt-32 md:mt-40 lg:mt-48 mb-20">
       {/* MAIN CONTAINER */}
-      <div className="w-5/6 mx-auto bg-[#314445]/50 backdrop-blur-sm border border-white/20 rounded-2xl px-12 py-20">
+      <div className="w-11/12 md:w-5/6 mx-auto bg-[#314445]/50 backdrop-blur-sm border border-white/20 rounded-2xl px-6 md:px-12 py-20">
         {/* HEADER */}
         <div className="text-center mb-20">
-          <p className="text-6xl text-[#F6C100] font-bold">Let’s Connect</p>
+          <p className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl text-[#F6C100] font-bold">
+            Let’s Connect
+          </p>
           <div className="w-56 h-1 mx-auto mt-8 bg-gradient-to-r from-transparent via-yellow-300 to-transparent"></div>
         </div>
 
@@ -25,17 +27,17 @@ const Footer = () => {
           {/* LEFT SIDE */}
           <div className="w-full lg:w-1/2">
             {/* LOCATION */}
-            <div className="flex items-center gap-3 mb-12">
-              <FontAwesomeIcon
-                icon={faLocationDot}
-                className="text-4xl text-[#00B1F0]"
-              />
-              <p className="text-3xl text-white">
-                Bangladesh
-                <span className="ml-6 text-sm text-green-400">
-                  ● Available 24/7
-                </span>
-              </p>
+            <div className="flex flex-col md:flex-row md:items-end gap-3 mb-12">
+              <div className="flex">
+                <FontAwesomeIcon
+                  icon={faLocationDot}
+                  className="text-4xl text-[#00B1F0]"
+                />
+                <p className="text-3xl text-white">Bangladesh</p>
+              </div>
+              <span className="ml-6 text-sm text-green-400">
+                ● Available 24/7
+              </span>
             </div>
 
             {/* WHATSAPP */}
@@ -43,8 +45,8 @@ const Footer = () => {
               className="
               w-full bg-[#00AE42]
               border border-white/20
-              rounded-xl px-6 py-6 mb-4
-              flex items-center gap-4
+              rounded-xl px-3 py-4 md:px-6 md:py-6 mb-4
+              flex items-center justify-center gap-2 md:gap-4
               shadow-lg shadow-green-500/30
               transition hover:bg-[#18c35a]
             "
@@ -66,8 +68,8 @@ const Footer = () => {
               className="
               w-full bg-[#DF9A00]
               border border-white/20
-              rounded-xl px-6 py-6 mb-12
-              flex items-center gap-4
+              rounded-xl px-3 py-4 md:px-6 md:py-6 mb-12
+              flex items-center justify-center gap-2 md:gap-4
               shadow-lg shadow-yellow-500/30
               transition hover:bg-[#f0b429]
             "

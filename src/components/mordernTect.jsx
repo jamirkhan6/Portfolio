@@ -18,55 +18,71 @@ const techs = [
 
 const items = [...techs, ...techs];
 
-const card =
-  "w-44 h-52 bg-[#314445]/60 backdrop-blur-sm rounded-2xl flex flex-col items-center justify-center grayscale hover:grayscale-0 transition-all";
+const card = `
+  w-28 h-36
+  sm:w-32 sm:h-40
+  md:w-40 md:h-48
+  lg:w-44 lg:h-52
+  bg-[#314445]/60 backdrop-blur-sm
+  rounded-2xl
+  flex flex-col items-center justify-center
+  transition-all
+  lg:grayscale lg:hover:grayscale-0
+`;
 
-const MordernTect = () => {
+const ModernTech = () => {
   return (
-    <section className="mt-48 mb-48">
-      <div className="w-4/5 mx-auto">
-        <p className="text-6xl text-[#F6C100] font-bold text-center">
+    <section className="mt-28 md:mt-32 lg:mt-48">
+      <div className="w-[95%] sm:w-11/12 lg:w-4/5 mx-auto">
+        <p className="text-3xl sm:text-4xl lg:text-6xl text-[#F6C100] font-bold text-center">
           Powered by Modern Tech
         </p>
-        <div className="w-96 h-1 mx-auto mt-8 bg-gradient-to-r from-transparent via-yellow-300 to-transparent"></div>
+
+        <div className="w-48 sm:w-72 lg:w-96 h-1 mx-auto mt-6 lg:mt-8 bg-gradient-to-r from-transparent via-yellow-300 to-transparent"></div>
 
         {/* TOP — LEFT ➜ RIGHT */}
-        <div className="overflow-hidden mt-24">
+        <div className="overflow-hidden mt-16 lg:mt-24">
           <motion.div
-            className="flex gap-10 w-max"
+            className="flex gap-4 sm:gap-6 lg:gap-10 w-max"
             animate={{ x: ["0%", "-50%"] }}
             transition={{
               duration: 14,
               ease: "linear",
               repeat: Infinity,
             }}
-            whileHover={{ animationPlayState: "paused" }}
           >
             {items.map((item, i) => (
               <div key={i} className={card}>
-                <div className="text-6xl mb-4">{item.logo}</div>
-                <p className="text-sm">{item.name}</p>
+                <div className="text-3xl sm:text-4xl lg:text-6xl mb-2 lg:mb-4">
+                  {item.logo}
+                </div>
+                <p className="text-[10px] sm:text-xs lg:text-sm text-center">
+                  {item.name}
+                </p>
               </div>
             ))}
           </motion.div>
         </div>
 
         {/* BOTTOM — RIGHT ➜ LEFT */}
-        <div className="overflow-hidden mt-20">
+        <div className="overflow-hidden mt-10 lg:mt-20">
           <motion.div
-            className="flex gap-10 w-max"
+            className="flex gap-4 sm:gap-6 lg:gap-10 w-max"
             animate={{ x: ["-50%", "0%"] }}
             transition={{
               duration: 14,
               ease: "linear",
               repeat: Infinity,
             }}
-            whileHover={{ animationPlayState: "paused" }}
           >
             {items.map((item, i) => (
               <div key={i} className={card}>
-                <div className="text-6xl mb-4">{item.logo}</div>
-                <p className="text-sm">{item.name}</p>
+                <div className="text-3xl sm:text-4xl lg:text-6xl mb-2 lg:mb-4">
+                  {item.logo}
+                </div>
+                <p className="text-[10px] sm:text-xs lg:text-sm text-center">
+                  {item.name}
+                </p>
               </div>
             ))}
           </motion.div>
@@ -76,4 +92,4 @@ const MordernTect = () => {
   );
 };
 
-export default MordernTect;
+export default ModernTech;
