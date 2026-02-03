@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const About = () => {
   return (
-    <section className="mt-20 lg:mt-48">
+    <section id="about" className="mt-20 lg:mt-48">
       <div className="grid lg:grid-cols-5 gap-20 mx-auto w-5/6 ">
         {/* right card -1  */}
         <div className=" lg:hidden col-span-5 lg:col-span-3">
@@ -80,7 +80,7 @@ const About = () => {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 1, ease: "easeOut" }}
             >
-              I'm Shehabul Islam, a passionate web developer from Dhaka,
+              I'm Jamir Khan, a passionate web developer from Dhaka,
               Bangladesh 🇧🇩. I specialize in crafting elegant, responsive, and
               interactive digital experiences that leave a lasting impression.
             </motion.p>
@@ -134,13 +134,13 @@ const About = () => {
               Passionate Developer | Creative Thinker | Problem Solver
             </motion.p>
 
-            <div className="w-42 h-1 mt-12 bg-gradient-to-r from-transparent via-yellow-300 to-transparent"></div>
+            <div className="w-42 h-1 mt-8 bg-gradient-to-r from-transparent via-yellow-300 to-transparent"></div>
           </div>
 
           {/* Animated quote */}
-          <div className="mt-12 w-full">
+          <div className="mt-16 w-full">
             <motion.p
-              className="text-4xl"
+              className="text-4xl dmMono"
               initial={{ y: 40, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true, amount: 0.3 }}

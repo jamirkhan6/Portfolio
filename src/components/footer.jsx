@@ -11,7 +11,7 @@ import {
 
 const Footer = () => {
   return (
-    <section className="mt-28 sm:mt-32 md:mt-40 lg:mt-48 mb-20">
+    <section id="contact" className="mt-28 sm:mt-32 md:mt-40 lg:mt-48 mb-20">
       {/* MAIN CONTAINER */}
       <div className="w-11/12 md:w-5/6 mx-auto bg-[#314445]/50 backdrop-blur-sm border border-white/20 rounded-2xl px-6 md:px-12 py-20">
         {/* HEADER */}
@@ -41,74 +41,131 @@ const Footer = () => {
             </div>
 
             {/* WHATSAPP */}
-            <div
-              className="
-              w-full bg-[#00AE42]
-              border border-white/20
-              rounded-xl px-3 py-4 md:px-6 md:py-6 mb-4
-              flex items-center justify-center gap-2 md:gap-4
-              shadow-lg shadow-green-500/30
-              transition hover:bg-[#18c35a]
-            "
+            <a
+              href="https://wa.me/8801772177815"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block"
             >
-              <FontAwesomeIcon
-                icon={faWhatsapp}
-                className="text-4xl text-white"
-              />
-              <div>
-                <p className="text-white/70 text-md mb-1">WhatsApp</p>
-                <p className="text-white text-xl font-medium">
-                  +88 01772 177 815
-                </p>
+              <div
+                className="
+                  w-full bg-[#00AE42]
+                  border border-white/20
+                  rounded-xl px-3 py-4 md:px-6 md:py-6 mb-4
+                  flex items-center justify-center gap-2 md:gap-4
+                  shadow-lg shadow-green-500/30
+                  transition hover:bg-[#18c35a]
+                  hover:scale-[1.02]
+                  cursor-pointer
+                "
+              >
+                <FontAwesomeIcon
+                  icon={faWhatsapp}
+                  className="text-4xl text-white"
+                />
+                <div>
+                  <p className="text-white/70 text-md md:text-xl mb-1">
+                    WhatsApp
+                  </p>
+                  <p className="text-white text-xl font-medium">
+                    +88 01772 177 815
+                  </p>
+                </div>
               </div>
-            </div>
+            </a>
 
             {/* PHONE */}
-            <div
-              className="
-              w-full bg-[#DF9A00]
-              border border-white/20
-              rounded-xl px-3 py-4 md:px-6 md:py-6 mb-12
-              flex items-center justify-center gap-2 md:gap-4
-              shadow-lg shadow-yellow-500/30
-              transition hover:bg-[#f0b429]
-            "
-            >
-              <FontAwesomeIcon icon={faPhone} className="text-3xl text-white" />
-              <div>
-                <p className="text-white/70 text-md mb-1">Call Now</p>
-                <p className="text-white text-xl font-medium">
-                  +88 01772 177 815
-                </p>
+            <a href="tel:+8801772177815" className="block">
+              <div
+                className="
+                  w-full bg-[#DF9A00]
+                  border border-white/20
+                  rounded-xl px-3 py-4 md:px-6 md:py-6 mb-12
+                  flex items-center justify-center gap-2 md:gap-4
+                  shadow-lg shadow-yellow-500/30
+                  transition hover:bg-[#f0b429]
+                  hover:scale-[1.02]
+                  cursor-pointer
+                "
+              >
+                <FontAwesomeIcon
+                  icon={faPhone}
+                  className="text-3xl text-white"
+                />
+                <div>
+                  <p className="text-white/70 text-md mb-1">Call Now</p>
+                  <p className="text-white text-xl font-medium">
+                    +88 01772 177 815
+                  </p>
+                </div>
               </div>
-            </div>
+            </a>
 
             {/* SOCIAL */}
             <p className="text-xl text-white font-bold mb-2">
               Connect on Social Media
             </p>
 
-            <div className="flex gap-4 mt-2">
-              <FontAwesomeIcon
-                icon={faFacebookF}
-                className="p-3 border text-[#1877F2] text-2xl border-[#00A6F4] rounded-2xl cursor-pointer transition hover:scale-110 hover:bg-white/10"
-              />
-              <FontAwesomeIcon
-                icon={faXTwitter}
-                className="p-3 border text-white text-2xl border-[#00A6F4] rounded-2xl cursor-pointer transition hover:scale-110 hover:bg-white/10"
-              />
-              <FontAwesomeIcon
-                icon={faInstagram}
-                className="p-3 border text-[#E4405F] text-2xl border-[#00A6F4] rounded-2xl cursor-pointer transition hover:scale-110 hover:bg-white/10"
-              />
-              <FontAwesomeIcon
-                icon={faLinkedinIn}
-                className="p-3 border text-[#0A66C2] text-2xl border-[#00A6F4] rounded-2xl cursor-pointer transition hover:scale-110 hover:bg-white/10"
-              />
-              <FontAwesomeIcon
-                icon={faWhatsapp}
-                className="p-3 border text-[#25D366] text-2xl border-[#00A6F4] rounded-2xl cursor-pointer transition hover:scale-110 hover:bg-white/10"
-              />
+            <div className="flex justify-between mt-2">
+              {/* Facebook */}
+              <a
+                href="https://facebook.com/m.jamirkhan6"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FontAwesomeIcon
+                  icon={faFacebookF}
+                  className="p-3 border text-[#1877F2] text-2xl border-[#00A6F4] rounded-2xl cursor-pointer transition hover:scale-110 hover:bg-white/10"
+                />
+              </a>
+
+              {/* X / Twitter */}
+              <a
+                href="https://x.com/jamirkhan06"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FontAwesomeIcon
+                  icon={faXTwitter}
+                  className="p-3 border text-white text-2xl border-[#00A6F4] rounded-2xl cursor-pointer transition hover:scale-110 hover:bg-white/10"
+                />
+              </a>
+
+              {/* Instagram */}
+              <a
+                href="https://instagram.com/jamirkhan06"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FontAwesomeIcon
+                  icon={faInstagram}
+                  className="p-3 border text-[#E4405F] text-2xl border-[#00A6F4] rounded-2xl cursor-pointer transition hover:scale-110 hover:bg-white/10"
+                />
+              </a>
+
+              {/* LinkedIn */}
+              <a
+                href="https://linkedin.com/in/jamirkhan6"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FontAwesomeIcon
+                  icon={faLinkedinIn}
+                  className="p-3 border text-[#0A66C2] text-2xl border-[#00A6F4] rounded-2xl cursor-pointer transition hover:scale-110 hover:bg-white/10"
+                />
+              </a>
+
+              {/* WhatsApp */}
+              <a
+                href="https://wa.me/8801772177815"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FontAwesomeIcon
+                  icon={faWhatsapp}
+                  className="p-3 border text-[#25D366] text-2xl border-[#00A6F4] rounded-2xl cursor-pointer transition hover:scale-110 hover:bg-white/10"
+                />
+              </a>
             </div>
           </div>
 

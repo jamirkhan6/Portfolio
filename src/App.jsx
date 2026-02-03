@@ -6,6 +6,8 @@ import MordernTect from "./components/mordernTect";
 import Navigation from "./components/navigation";
 import Projects from "./components/projects";
 
+import './app.css'
+
 
 function App() {
   return (

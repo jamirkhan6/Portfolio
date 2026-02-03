@@ -6,6 +6,16 @@ import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 const Navigation = () => {
   const [open, setOpen] = useState(false);
 
+  const handleScroll = (id) => {
+    setOpen(false);
+
+    setTimeout(() => {
+      const section = document.getElementById(id);
+      section?.scrollIntoView({ behavior: "smooth" });
+    }, 300);
+  };
+
+
   return (
     <motion.section
       className="mt-6"
@@ -63,24 +73,22 @@ const Navigation = () => {
           >
             <div className="flex flex-col items-center gap-6 py-8">
               {["Home", "Projects", "About", "Contact"].map((item) => (
-                <a
+                <button
                   key={item}
-                  href={`#${item.toLowerCase()}`}
+                  onClick={() => handleScroll(item.toLowerCase())}
                   className="text-lg text-white hover:text-teal-300"
-                  onClick={() => setOpen(false)}
                 >
                   {item}
-                </a>
+                </button>
               ))}
 
               {/* Mobile Hire Me */}
-              <a
-                href="#contact"
+              <button
+                onClick={() => handleScroll("contact")}
                 className="px-6 py-3 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-medium"
-                onClick={() => setOpen(false)}
               >
                 Hire Me
-              </a>
+              </button>
             </div>
           </motion.div>
         )}

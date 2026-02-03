@@ -31,6 +31,7 @@ import {
 const Home = () => {
   return (
     <motion.section
+      id="home"
       className="mt-16 lg:mt-24"
       initial={{ y: 80, opacity: 0 }}
       whileInView={{ y: 0, opacity: 1 }}
@@ -56,7 +57,7 @@ const Home = () => {
             technologies like React, Node.js, and Tailwind CSS.
           </p>
 
-          <p className="text-lg md:text-xl text-white font-bold mt-6">
+          <p className="text-2xl md:text-2xl text-white playFair font-bold mt-6">
             I am a
             <TextType
               text={[
@@ -77,22 +78,49 @@ const Home = () => {
 
           {/* SOCIAL ICONS */}
           <div className="mt-8 flex justify-center lg:justify-start gap-4 flex-wrap">
-            {[faFacebookF, faXTwitter, faInstagram, faLinkedinIn, faGithub].map(
-              (icon, i) => (
-                <FontAwesomeIcon
-                  key={i}
-                  icon={icon}
-                  className="py-3 px-3 border-2 text-xl border-[#00A6F4] rounded-full hover:scale-110 transition"
-                />
-              )
-            )}
+            {[
+              {
+                icon: faFacebookF,
+                link: "https://facebook.com/m.jamirkhan6",
+              },
+              {
+                icon: faXTwitter,
+                link: "https://twitter.com/jamirkhan06",
+              },
+              {
+                icon: faInstagram,
+                link: "https://instagram.com/jamirkhan06",
+              },
+              {
+                icon: faLinkedinIn,
+                link: "https://linkedin.com/in/jamirkhan6",
+              },
+              {
+                icon: faGithub,
+                link: "https://github.com/jamirkhan6",
+              },
+            ].map((item, i) => (
+              <a
+                key={i}
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="py-3 px-3 border-2 text-xl border-[#00A6F4] rounded-full hover:scale-110 transition inline-flex items-center justify-center"
+              >
+                <FontAwesomeIcon icon={item.icon} />
+              </a>
+            ))}
           </div>
 
           {/* BUTTON */}
           <div className="mt-10">
-            <button className="px-8 py-3 rounded-full bg-blue-600 hover:bg-blue-700 transition">
+            <a
+              href="/resume.docx"
+              download
+              className="inline-block px-8 py-3 rounded-full bg-blue-600 hover:bg-blue-700 transition"
+            >
               Download Resume
-            </button>
+            </a>
           </div>
         </div>
 
