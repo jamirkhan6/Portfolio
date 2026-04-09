@@ -13,7 +13,7 @@ app.use(express.json());
 
 app.use(
   cors({
-    origin: "https://portfolio-dnj4.onrender.com",
+    origin: "https://jamir-portfolio.netlify.app",
     credentials: true,
   })
 );
