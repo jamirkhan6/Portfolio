@@ -22,9 +22,11 @@ const ChatBox = () => {
 
     try {
       // Call backend
-      const res = await axios.post("http://localhost:3000/chat", {
-        message: input,
-      });
+      const res = await axios.post("https://portfolio-dnj4.onrender.com/chat",
+        {
+          message: input,
+        }
+      );
 
       console.log("backend response : "+ res.data)
 
