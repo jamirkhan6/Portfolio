@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,opsz,wght@0,5..1200,400..700;1,5..1200,400..700&family=Inter:wght@300;400;500;600&family=Poppins:wght@400;500;600&family=DM+Mono:wght@400;500&family=Cinzel:wght@500;600&display=swap');
+
+.playFair {
+  font-family: "Playfair", serif;
+}
+
+.inter {
+  font-family: "Inter", sans-serif;
+}
+
+.poppins {
+  font-family: "Poppins", sans-serif;
+}
+
+.dmMono {
+  font-family: "DM Mono", monospace;
+}
+
+.cinzel {
+  font-family: "Cinzel", serif;
+}
