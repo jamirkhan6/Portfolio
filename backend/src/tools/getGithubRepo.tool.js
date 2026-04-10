@@ -2,14 +2,12 @@ const axios = require("axios");
 
 async function getGithubRepo() {
   try {
-    const res = await axios.get(
-      "https://api.github.com/users/jamirkhan6/repos",
-      {
-        headers: {
-          Accept: "application/vnd.github+json",
-        },
-      }
-    );
+    const res = await axios.get("https://api.github.com/users/jamirkhan6/repos", {
+      headers: {
+        Authorization: `token YOUR_GITHUB_TOKEN`,
+        Accept: "application/vnd.github+json",
+      },
+    });
 
     const repos = res.data;
 
@@ -24,11 +22,13 @@ async function getGithubRepo() {
     const latest = sorted[0];
 
     return {
-      latestProject: {
-        name: latest.name,
-        language: latest.language,
-        url: latest.html_url,
-      },
+      latestProject: latest
+        ? {
+            name: latest.name,
+            language: latest.language,
+            url: latest.html_url,
+          }
+        : "No projects found",
       projects: sorted.slice(0, 5).map((p) => ({
         name: p.name,
         language: p.language,

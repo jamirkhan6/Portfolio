@@ -96,7 +96,7 @@ Focus only on the final answer.
         {
           role: "tool",
           tool_call_id: toolCall.id,
-          content: JSON.stringify(result),
+          content: JSON.stringify(result, null, 2),
         },
         {
           role: "system",
