@@ -1,8 +1,7 @@
-const { tools, toolMap } = require("../tools/index.js")
-const { openai } = require("../config/openAi.js")
+const { tools, toolMap } = require("../tools/index.js");
+const { openai } = require("../config/openAi.js");
 
 async function handleChat(message) {
-    
   const messages = [
     {
       role: "system",
@@ -15,6 +14,10 @@ Rules:
 - Answer like a human assistant
 - Be clean, structured, and helpful
 - Use markdown formatting (bold, lists, links)
+- If user asks about:
+  - skills → show skills
+  - projects / github → show projects
+  - about / bio → show bio
 
 Focus only on the final answer.
 `,
@@ -29,7 +32,7 @@ Focus only on the final answer.
 
   try {
     response = await openai.chat.completions.create({
-      model: "meta-llama/llama-3-8b-instruct",
+      model: "gpt-4o-mini", // 🔥 FIXED MODEL
       messages,
       tools,
     });
@@ -37,17 +40,16 @@ Focus only on the final answer.
     console.error("OpenAI error:", err);
     return "Error contacting AI service";
   }
-  
 
   const msg = response.choices[0].message;
 
   let toolCall = msg.tool_calls?.[0];
 
-  // 🔥 fallback
-  if (!toolCall && msg.content) {
-    const text = msg.content.toLowerCase();
+  // 🔥 FIXED FALLBACK (use USER message, not AI response)
+  if (!toolCall) {
+    const text = message.toLowerCase();
 
-    if (text.includes("project") || text.includes("language")) {
+    if (text.includes("project") || text.includes("github")) {
       toolCall = {
         function: { name: "getGithubRepo", arguments: "{}" },
         id: "manual_project",
@@ -59,8 +61,8 @@ Focus only on the final answer.
       };
     } else if (
       text.includes("bio") ||
-      text.includes("yourself") ||
-      text.includes("about")
+      text.includes("about") ||
+      text.includes("yourself")
     ) {
       toolCall = {
         function: { name: "getBio", arguments: "{}" },
@@ -73,15 +75,21 @@ Focus only on the final answer.
     const toolName = toolCall.function.name;
 
     if (!toolMap[toolName]) {
-      return "Tool not found";
+      return "Something went wrong. Please try again.";
     }
 
-    const args = JSON.parse(toolCall.function.arguments || "{}");
+    // 🔥 SAFE JSON PARSE
+    let args = {};
+    try {
+      args = JSON.parse(toolCall.function.arguments || "{}");
+    } catch (e) {
+      args = {};
+    }
 
     const result = await toolMap[toolName](args);
 
     const secondResponse = await openai.chat.completions.create({
-      model: "meta-llama/llama-3-8b-instruct",
+      model: "gpt-4o-mini",
       messages: [
         ...messages,
         msg,
@@ -89,6 +97,11 @@ Focus only on the final answer.
           role: "tool",
           tool_call_id: toolCall.id,
           content: JSON.stringify(result),
+        },
+        {
+          role: "system",
+          content:
+            "Format the response nicely using markdown. Do not return raw JSON.",
         },
       ],
     });
@@ -99,6 +112,4 @@ Focus only on the final answer.
   return msg.content;
 }
 
-
-
-module.exports = {handleChat}
+module.exports = { handleChat };
