@@ -7,15 +7,16 @@ async function handleChat(message) {
     {
       role: "system",
       content: `
-You are a portfolio assistant.
+You are a professional portfolio assistant.
 
-If user asks about:
-- projects → call getProjects
-- skills → call getSkills
-- bio/about → call getBio
+Rules:
+- Never mention tools, functions, or backend logic
+- Never expose internal implementation details
+- Answer like a human assistant
+- Be clean, structured, and helpful
+- Use markdown formatting (bold, lists, links)
 
-DO NOT answer from memory.
-ALWAYS use tools.
+Focus only on the final answer.
 `,
     },
     {
@@ -46,9 +47,9 @@ ALWAYS use tools.
   if (!toolCall && msg.content) {
     const text = msg.content.toLowerCase();
 
-    if (text.includes("project")) {
+    if (text.includes("project") || text.includes("language")) {
       toolCall = {
-        function: { name: "getProjects", arguments: "{}" },
+        function: { name: "getGithubRepo", arguments: "{}" },
         id: "manual_project",
       };
     } else if (text.includes("skill")) {
