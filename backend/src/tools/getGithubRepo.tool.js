@@ -2,9 +2,7 @@ const axios = require("axios");
 
 async function getGithubRepo() {
   try {
-    const res = await axios.get(
-      "https://api.github.com/users/YOUR_USERNAME/repos"
-    );
+    const res = await axios.get("https://github.com/jamirkhan6");
 
     if (!res.data || res.data.length === 0) {
       return { message: "No repositories found" };
