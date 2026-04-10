@@ -23,7 +23,7 @@ const tools = [
     type: "function",
     function: {
       name: "getGithubRepo",
-      description: "Get GitHub repositories with name, language, and URL",
+      description: "Get GitHub repositories with Project, language, and URL",
       parameters: { type: "object", properties: {} },
     },
   },
