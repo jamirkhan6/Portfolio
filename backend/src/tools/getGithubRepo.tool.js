@@ -2,7 +2,9 @@ const axios = require("axios");
 
 async function getGithubRepo() {
   try {
-    const res = await axios.get("https://github.com/jamirkhan6");
+    const res = await axios.get(
+      "https://github.com/jamirkhan6?tab=repositories"
+    );
 
     if (!res.data || res.data.length === 0) {
       return { message: "No repositories found" };
@@ -20,7 +22,7 @@ async function getGithubRepo() {
         language: latest.language,
         url: latest.html_url,
       },
-      projects: sorted.slice(0, 5).map((p) => ({
+      projects: sorted.slice(0, 2).map((p) => ({
         name: p.name,
         language: p.language,
         url: p.html_url,
