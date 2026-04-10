@@ -3,14 +3,21 @@ const axios = require("axios");
 async function getGithubRepo() {
   try {
     const res = await axios.get(
-      "https://github.com/jamirkhan6?tab=repositories"
+      "https://api.github.com/users/jamirkhan6/repos",
+      {
+        headers: {
+          Accept: "application/vnd.github+json",
+        },
+      }
     );
 
-    if (!res.data || res.data.length === 0) {
+    const repos = res.data;
+
+    if (!repos || repos.length === 0) {
       return { message: "No repositories found" };
     }
 
-    const sorted = res.data.sort(
+    const sorted = repos.sort(
       (a, b) => new Date(b.updated_at) - new Date(a.updated_at)
     );
 
@@ -22,7 +29,7 @@ async function getGithubRepo() {
         language: latest.language,
         url: latest.html_url,
       },
-      projects: sorted.slice(0, 2).map((p) => ({
+      projects: sorted.slice(0, 5).map((p) => ({
         name: p.name,
         language: p.language,
         url: p.html_url,
